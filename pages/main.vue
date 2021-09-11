@@ -11,6 +11,12 @@
 import axios from "axios";
 
 export default {
+
+  async asyncData () {
+    const response = await axios.get('http://localhost:3000/products');
+    this.products = response.data;
+  },
+
   data () {
     return {
       products: []
@@ -18,8 +24,6 @@ export default {
   },
 
   async created () {
-    const response = await axios.get('http://localhost:3000/products');
-    this.products = response.data;
 
   }
 };
