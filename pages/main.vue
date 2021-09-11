@@ -5,20 +5,13 @@
 </template>
 
 <script>
+import axios from "axios";
+
 export default {
-  data () {
-    return {
-
-    };
-  },
-
-  mounted () {
-
-  },
-
-  methods: {
-
-  },
+  async created () {
+    const response = await axios.get('http://localhost:3000/products');
+    console.log(response);
+  }
 };
 </script>
 
