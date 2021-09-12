@@ -8,6 +8,7 @@
           v-for="product in products"
           :key="product.id"
           class="item flex"
+          @click="moveToDetailPage(product.id)"
         >
           <img
             class="product-image"
@@ -34,6 +35,12 @@ export default {
     }));
     return { products }
   },
+
+  methods: {
+    moveToDetailPage (id) {
+      console.log(id);
+    }
+  }
 };
 </script>
 
