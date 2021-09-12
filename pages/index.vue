@@ -13,7 +13,7 @@
           <img
             class="product-image"
             :src="product.imageUrl"
-            alt="product.name"
+            :alt="product.name"
           >
           <p>{{product.name}}</p>
           <span>{{product.price}}</span>
