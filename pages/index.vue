@@ -1,7 +1,7 @@
 <template>
   <div class="app">
     <main>
-      <SearchInput />
+      <SearchInput v-model="searchKeyword" />
 
       <ul>
         <li
@@ -36,6 +36,16 @@ export default {
       imageUrl: `${item.imageUrl}?random=${Math.random()}`
     }));
     return { products }
+  },
+
+  data () {
+    return {
+      searchKeyword: ''
+    }
+  },
+
+  updated () {
+    console.log(this.searchKeyword);
   },
 
   methods: {
