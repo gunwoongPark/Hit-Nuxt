@@ -4,7 +4,7 @@
     <div class="list-wrapper">
       <ul>
         <li
-          v-for="cartItem in $store.state.cartItems"
+          v-for="cartItem in cartItems"
           :key="cartItem.id"
           class="list-item"
         >
@@ -28,8 +28,16 @@
 </template>
 
 <script>
+import axios from 'axios';
 export default {
-
+  async asyncData () {
+    const response = await axios.get('http://localhost:3000/carts');
+    const cartItems = response.data.map((item) => ({
+      ...item,
+      imageUrl: `${item.imageUrl}?random=${Math.random()}`
+    }));
+    return { cartItems }
+  }
 }
 </script>
 

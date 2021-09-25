@@ -11,7 +11,3 @@ export const mutations = {
         state.cartItems.push(newCartItem);
     }
 }
-
-export const actions = {
-
-}

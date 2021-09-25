@@ -199,6 +199,12 @@
       "name": "Refined Fresh Chicken",
       "price": "209.00",
       "imageUrl": "http://placeimg.com/640/480/fashion"
+    },
+    {
+      "id": 4,
+      "name": "Unbranded Rubber Chair",
+      "price": "458.00",
+      "imageUrl": "http://placeimg.com/640/480/fashion"
     }
   ]
 }
