@@ -15,14 +15,14 @@
         <button
           type="button"
           @click="addToCart"
-        >Add to Cart</button>
+        >카트에 담기</button>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import { fetchProductById } from "@/api/index"
+import { createCartItem, fetchProductById } from "@/api/index"
 
 export default {
   async asyncData ({ params }) {
@@ -31,7 +31,9 @@ export default {
     return { product }
   },
   methods: {
-    addToCart () {
+    async addToCart () {
+      const response = await createCartItem(this.product);
+      console.log(response);
       this.$store.commit('addCartItem', this.product);
       this.$router.push("/cart");
     }
