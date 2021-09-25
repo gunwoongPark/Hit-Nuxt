@@ -11,10 +11,11 @@
       <div class="side-panel">
         <p class="name">{{ product.name }}</p>
         <p class="price">{{ product.price }}</p>
-        <!-- <button
+
+        <button
           type="button"
           @click="addToCart"
-        >Add to Cart</button> -->
+        >Add to Cart</button>
       </div>
     </div>
   </div>
@@ -28,6 +29,11 @@ export default {
     const response = await fetchProductById(params.id);
     const product = response.data;
     return { product }
+  },
+  methods: {
+    addToCart () {
+      this.$router.push("/cart");
+    }
   }
 };
 </script>
