@@ -31,7 +31,7 @@ export const actions = {
             }
         )));
     },
-    nuxtServerInit(){
-        
+    async nuxtServerInit (storeContext, nuxtContext) {
+        await storeContext.dispatch(FETCH_CART_ITEMS)
     }
 }
