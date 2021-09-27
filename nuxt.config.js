@@ -44,6 +44,14 @@ export default {
 
   // server setup
   server: {
+    // 배포 버전은 null 개발 버전은 5000번 포트를 물린다.
     port: process.env.NODE_ENV === 'production' ? null : 5000,
+  },
+
+  // env config
+  env: {
+    baseURL: process.env.NODE_ENV === 'production'
+      ? 'https://my-json-server.typicode.com/gunwoongPark/Learn-Nuxt.js-api'
+      : 'http://localhost:3000',
   }
 }
