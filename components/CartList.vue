@@ -26,7 +26,6 @@ import { FETCH_CART_ITEMS } from '@/store'
 
 export default {
   async fetch () {
-    //   console.log(this)
     await this.$store.dispatch(FETCH_CART_ITEMS);
   }
 }
